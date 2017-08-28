@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:remote="http://www.sf-pay.com/schema/remote" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"		
+	xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd          
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+      http://www.sf-pay.com/schema/remote http://www.sf-pay.com/schema/remote/framework2-remote.xsd">
+
+<!-- 	<context:property-placeholder location="classpath:properties/jdbc.properties" />
+	<context:property-placeholder location="classpath:properties/log4j.properties" />	
+	
+	<import resource="classpath:beans/beans-resource.xml" />	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.ams.dao" />
+	</bean> -->
+	
+	<import resource="classpath:dubbo-user.xml" />
+	<import resource="classpath:dubbo-login.xml" />
+	<!-- 扫描指定package下所有带有如@controller,@service,@resource,并把所注释的注册为Spring Beans -->
+	<context:component-scan base-package="com.**"></context:component-scan>	
+</beans>
